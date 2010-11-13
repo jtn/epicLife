@@ -1,29 +1,28 @@
-<h1>Listing feats</h1>
-
-<table>
-  <tr>
-    <th>Person</th>
-    <th>Activity</th>
-    <th>Xp</th>
-    <th>Completed</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @feats.each do |feat| %>
-  <tr>
-    <td><%= feat.person_id %></td>
-    <td><%= feat.activity_id %></td>
-    <td><%= feat.xp %></td>
-    <td><%= feat.completed ? "[X]": "[ ]" %></td>
-    <td><%= link_to 'Show', person_feat_path(@person, feat) %></td>
-    <td><%= link_to 'Edit', edit_person_feat_path(@person, feat) %></td>
-    <td><%= link_to 'Destroy', person_feat_path(@person, feat), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Feat', new_person_feat_path(@person) %>
+<header>
+    <h1>Epic life</h1>
+</header>
+<section id="stats">
+    <%= @person.name %>
+    <img class="avatar" src="http://a2.twimg.com/profile_images/56071654/humm.jpg" alt="Martins avatar" />
+    <div id="xp_meter"><span>XP: 100/500</span></div>
+    <p id="loot">Loot: 1 mån, 3 dagar</p>
+</section>
+<section id="feats">
+    <header>
+        <h2>Ons 17 nov</h2>
+        <nav>
+            <ul>
+                <li><a href="?date=2010-11-16">16 nov</a></li>
+                <li><a href="?date=2010-11-18">18 nov</a></li>
+            <ul>
+        </nav>
+    </header>
+    <ol>
+        <% @feats.each do |feat| %>
+        <li><input class="feat" type="button" value="<%= feat.activity.title %>" data-id="<%= feat.id %>" data-completed="<%= feat.completed %>" /></li>
+        <% end %>
+    </ol>
+    <div>
+        <%= button_to('Lägg till ny', new_person_feat_path(@person), :method => :get) %>
+    </div>
+</section>
