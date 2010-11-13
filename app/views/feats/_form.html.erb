@@ -1,4 +1,4 @@
-<%= form_for(@feat) do |f| %>
+<%= form_for([@person, @feat]) do |f| %>
   <% if @feat.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@feat.errors.count, "error") %> prohibited this feat from being saved:</h2>

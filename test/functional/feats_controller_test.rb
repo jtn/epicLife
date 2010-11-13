@@ -44,6 +44,6 @@ class FeatsControllerTest < ActionController::TestCase
       delete :destroy, :id => @feat.to_param
     end
 
-    assert_redirected_to feats_path
+    assert_redirected_to person_feats_path(@person)
   end
 end

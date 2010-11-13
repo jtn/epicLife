@@ -15,13 +15,13 @@
     <td><%= feat.person_id %></td>
     <td><%= feat.activity_id %></td>
     <td><%= feat.xp %></td>
-    <td><%= link_to 'Show', feat %></td>
-    <td><%= link_to 'Edit', edit_feat_path(feat) %></td>
-    <td><%= link_to 'Destroy', feat, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', person_feat_path(@person, feat) %></td>
+    <td><%= link_to 'Edit', edit_person_feat_path(@person, feat) %></td>
+    <td><%= link_to 'Destroy', person_feat_path(@person, feat), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Feat', new_feat_path %>
+<%= link_to 'New Feat', new_person_feat_path(@person) %>

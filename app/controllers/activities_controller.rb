@@ -2,10 +2,7 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.xml
   def index
-      day = params[:date].nil? ? Time.now : DateTime.parse(params[:date])
-      beginning_of_day = day.beginning_of_day
-      end_of_day = day.end_of_day
-      @activities = Activity.all(:conditions => ["start_time > ? and start_time < ?", beginning_of_day, end_of_day])
+    @activities = Activity.all
 
     respond_to do |format|
       format.html # index.html.erb
