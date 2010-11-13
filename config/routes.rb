@@ -1,10 +1,10 @@
 EpicLife::Application.routes.draw do
   resources :people do
-    resources :activities
+    # resources :activities
     resources :feats
   end
 
   resources :activities do
-    resources :feats
+    # resources :feats
   end
 end
