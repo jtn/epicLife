@@ -223,6 +223,45 @@ button {  width: auto; overflow: visible; }
  /* Primary Styles
     Author: 
  */
+header h1 {
+    height: 50px;
+    background-color: #333;
+    color: white;
+    line-height: 48px;
+    font-size: 36px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+header h1 span { color: #E709FF; }
+
+h2 time { 
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 100px;
+}
+nav { position:relative; top: -24px;}
+nav li.previous { float: left;}
+nav li.next { float: right;}
+
+#stats {
+    background-color: #333;
+    color: white;
+    border-bottom: 1px solid grey;
+}
+#stats h2 { 
+    display: inline;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+#stats img { 
+    height: 75px;
+    float:left;
+    padding: 3px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin-right: 5px;
+}
 
 
 

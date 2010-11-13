@@ -1,19 +1,16 @@
-<header>
-    <h1>Epic life</h1>
-</header>
-<section id="stats">
-    <%= @person.name %>
+<section id="stats" class="clearfix">
+    <h2><%= @person.name %></h2>
     <img class="avatar" src="<%= @person.avatar_url_or_fallback %>" alt="Martins avatar" />
     <div id="xp_meter"><span>XP: <%= @person.xp %>/<%= @person.next_level %></span></div>
     <p id="loot">Loot: 1 mån, 3 dagar</p>
 </section>
 <section id="feats">
     <header>
-        <h2>Ons 17 nov</h2>
-        <nav>
+        <h2><time>Ons 17 nov</time></h2>
+        <nav class="clearfix">
             <ul>
-                <li><a href="?date=2010-11-16">16 nov</a></li>
-                <li><a href="?date=2010-11-18">18 nov</a></li>
+                <li class="previous"><a href="?date=2010-11-16"><time>16 nov</time></a></li>
+                <li class="next"><a href="?date=2010-11-18"><time>18 nov</time></a></li>
             <ul>
         </nav>
     </header>

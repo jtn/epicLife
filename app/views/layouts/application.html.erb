@@ -12,6 +12,9 @@
     <meta name="description" content="Epic Life is an app for making a game out of healthy living. It was created at eHälsa2010, a 24 hour hackathon in Stockholm Nov 13-14, 2010.">
     <meta name="author" content="Martin Svalin, Johan Tjelldén, Erik Ylipää">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <%= stylesheet_link_tag "epiclife" %>
@@ -20,8 +23,13 @@
 </head>
 
 <body>
+    <header>
+        <h1>Epic <span>life</span></h1>
+    </header>
 
+    <!-- yield -->
     <%= yield %>
+    <!-- end yield -->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/jquery-1.4.4.js"%3E%3C/script%3E'))</script>
