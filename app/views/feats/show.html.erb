@@ -15,6 +15,10 @@
   <%= @feat.xp %>
 </p>
 
+<p>
+  <b>Completed:</b>
+  <%= @feat.completed ? "true" : "false" %>
+</p>
 
 <%= link_to 'Edit', edit_person_feat_path(@person, @feat) %> |
 <%= link_to 'Back', person_feats_path(@person) %>
