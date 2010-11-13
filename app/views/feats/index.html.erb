@@ -3,8 +3,8 @@
 </header>
 <section id="stats">
     <%= @person.name %>
-    <img class="avatar" src="http://a2.twimg.com/profile_images/56071654/humm.jpg" alt="Martins avatar" />
-    <div id="xp_meter"><span>XP: 100/500</span></div>
+    <img class="avatar" src="<%= @person.avatar_url_or_fallback %>" alt="Martins avatar" />
+    <div id="xp_meter"><span>XP: <%= @person.xp %>/<%= @person.next_level %></span></div>
     <p id="loot">Loot: 1 mån, 3 dagar</p>
 </section>
 <section id="feats">

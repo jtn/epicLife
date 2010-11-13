@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101113154230) do
+ActiveRecord::Schema.define(:version => 20101113181104) do
 
   create_table "activities", :force => true do |t|
     t.string   "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20101113154230) do
     t.float    "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_url"
   end
 
 end
