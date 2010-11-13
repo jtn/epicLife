@@ -1,0 +1,29 @@
+<%= form_for(@feat) do |f| %>
+  <% if @feat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feat.errors.count, "error") %> prohibited this feat from being saved:</h2>
+
+      <ul>
+      <% @feat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :person_id %><br />
+    <%= f.text_field :person_id %>
+  </div>
+  <div class="field">
+    <%= f.label :activity_id %><br />
+    <%= f.text_field :activity_id %>
+  </div>
+  <div class="field">
+    <%= f.label :xp %><br />
+    <%= f.text_field :xp %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

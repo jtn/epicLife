@@ -1,0 +1,27 @@
+<h1>Listing feats</h1>
+
+<table>
+  <tr>
+    <th>Person</th>
+    <th>Activity</th>
+    <th>Xp</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @feats.each do |feat| %>
+  <tr>
+    <td><%= feat.person_id %></td>
+    <td><%= feat.activity_id %></td>
+    <td><%= feat.xp %></td>
+    <td><%= link_to 'Show', feat %></td>
+    <td><%= link_to 'Edit', edit_feat_path(feat) %></td>
+    <td><%= link_to 'Destroy', feat, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Feat', new_feat_path %>
