@@ -4,7 +4,11 @@ class FeatsController < ApplicationController
   # GET /feats
   # GET /feats.xml
   def index
-    @feats = @person.feats.all(:include => :activity)
+    @date = params[:date].present? ? Date.parse(params[:date]) : Date.today
+    beginning_of_day, end_of_day = @date.beginning_of_day, @date.end_of_day
+    @feats = @person.feats.all(
+      :include => :activity, 
+      :conditions => ["activities.start_time > ? and activities.start_time < ?", beginning_of_day, end_of_day])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @feats }
