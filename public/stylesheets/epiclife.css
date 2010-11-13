@@ -234,15 +234,6 @@ header h1 {
 }
 header h1 span { color: #E709FF; }
 
-h2 time { 
-    font-size: 18px;
-    line-height: 24px;
-    padding: 0 100px;
-}
-nav { position:relative; top: -24px;}
-nav li.previous { float: left;}
-nav li.next { float: right;}
-
 #stats {
     background-color: #333;
     color: white;
@@ -263,6 +254,83 @@ nav li.next { float: right;}
     margin-right: 5px;
 }
 
+#feats h2 {
+    width: 80%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+}
+nav { position:relative; top: -24px;}
+nav li.previous { float: left;}
+nav li.next { float: right;}
+
+
+#feats ol { 
+    list-style: none;
+    margin: 0;
+}
+#feats ol li { padding: 0;}
+
+#feats a.feat, 
+#feats a.feat.completed:hover { 
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+    width: 80%;
+    text-align: center;
+    line-height: 48px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 0px 1px 0 #cecece;
+    -webkit-background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background-image: -webkit-gradient( 
+        linear, 
+        left top, 
+        left bottom, 
+        from(#e2e2e2), 
+        to(#8c8a88), 
+        color-stop(0.5, #acadae), 
+        color-stop(0.5, #82807e)
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        #8c8a88 0%,
+        #82807e 50%,
+        #acadae 50%,
+        #e2e2e2 100%
+    );
+}
+
+#feats a.feat:hover, 
+#feats a.feat.completed {
+    background-image: -webkit-gradient( 
+        linear, 
+        left top, 
+        left bottom, 
+        from(#3EE23B), 
+        to(#248C24), 
+        color-stop(0.5, #37AE33), 
+        color-stop(0.5, #2A8230)
+    );
+    background-image: -moz-linear-gradient(
+        center top,
+        #e2e2e2 0%,
+        #acadae 50%,
+        #82807e 50%,
+        #8c8a88 100%,
+    );
+}
+#feats a.feat:hover {
+    opacity: 0.7;
+}
+#feats a.feat.completed:hover {
+    opacity: 0.7;
+}
 
 
 

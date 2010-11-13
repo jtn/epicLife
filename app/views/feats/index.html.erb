@@ -16,7 +16,7 @@
     </header>
     <ol>
         <% @feats.each do |feat| %>
-        <li><input class="feat" type="button" value="<%= feat.activity.title %>" data-id="<%= feat.id %>" data-completed="<%= feat.completed %>" /></li>
+        <li><a class="feat<%= " completed" if feat.completed? %>" src="#" data-id="<%= feat.id %>" data-completed="<%= feat.completed %>" /><%= feat.activity.title %></a></li>
         <% end %>
     </ol>
     <div>
