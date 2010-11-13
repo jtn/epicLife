@@ -260,7 +260,12 @@ header h1 span { color: #E709FF; }
     font-size: 18px;
     line-height: 24px;
 }
-nav { position:relative; top: -24px;}
+nav { 
+    position:relative; 
+    top: -24px;
+    line-height: 24px;
+    font-size: 18px;
+}
 nav li.previous { float: left;}
 nav li.next { float: right;}
 
@@ -271,6 +276,7 @@ nav li.next { float: right;}
 }
 #feats ol li { padding: 0;}
 
+#new a,
 #feats a.feat, 
 #feats a.feat.completed:hover { 
     cursor: pointer;
@@ -283,6 +289,7 @@ nav li.next { float: right;}
     font-weight: bold;
     color: black;
     text-shadow: 0px 1px 0 #cecece;
+    text-decoration: none;
     -webkit-background-origin: padding-box;
     -webkit-background-clip: border-box;
     -webkit-border-radius: 8px;
@@ -325,13 +332,17 @@ nav li.next { float: right;}
         #8c8a88 100%,
     );
 }
+
+#feats #new a:hover,
 #feats a.feat:hover {
     opacity: 0.7;
 }
-#feats a.feat.completed:hover {
-    opacity: 0.7;
-}
 
+#feats #new {
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
 
 
 
