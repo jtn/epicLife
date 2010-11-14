@@ -18,7 +18,6 @@ class Person < ActiveRecord::Base
   end
 
   def level
-    #((self.xp - 1)/@@level_constant).floor;
     level_function_xp(self.xp)
   end
 
@@ -26,7 +25,7 @@ class Person < ActiveRecord::Base
     level*@@level_constant
   end
   def xp_for_next
-       ((level+1)*700)
+       ((level+1)*@@level_constant)
   end
 
 
