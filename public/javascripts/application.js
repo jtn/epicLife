@@ -15,17 +15,20 @@ $(function() {
                 .data('next_level_ratio',data.next_level_ratio);
                 $('#extra_life').data('extra_life', data.extra_life);
                 update_xp_meter(1500,data.has_leveled);
-                var gainer = $('<div class="xpGained">' + data.xpGained + '</div>'); 
-                var elementPosition = element.position();
-                gainer.css('top', elementPosition.top);
-                gainer.css('left', elementPosition.left + element.width()/2);
+                var gainer = $('<div class="xp_gained">' + data.xpGained + 'XP</div>'); 
+                //var elementPosition = element.position();
                 element.after(gainer);
+                gainer.css('top', event.pageY - gainer.height()/2);
+                gainer.css('left',event.pageX - gainer.width()/2);
                 gainer.animate(
                     {
                         top: '-=50',
                         opacity: 0
                     }, 
-                    1500, function(){gainer.remove()});
+                    1500, function(){
+                        gainer.remove();
+                        $('body').trigger('click');
+                    });
             }})
                 //.fadeOut(1500);
         return false;

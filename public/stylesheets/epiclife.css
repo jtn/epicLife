@@ -276,11 +276,13 @@ nav li.next { float: right;}
 }
 #feats ol li { padding: 0;}
 
+
 #new a,
 #feats a.feat, 
 #feats a.feat.completed:hover { 
     cursor: pointer;
     display: block;
+    margin-left: 6px;
     margin-bottom: 10px;
     width: 80%;
     text-align: center;
@@ -344,8 +346,23 @@ nav li.next { float: right;}
     margin-top: 20px;
 }
 
-.xpGained {
+#feats .streak {
+    position: relative;
+    top: -54px;
+    font-size: 34px;
+    font-weight: bold;
+    float: right;
+    padding-right: 10%;
+    color: black;
+    text-shadow: #FF0000 0px 1px 0px;
+}
+
+.xp_gained {
+    font-size: 36px;
+    font-weight: bold;
     position: absolute;
+    color: #E709FF;
+    text-shadow: #000 0px 1px 0px;
 }
 
 #xp_meter {

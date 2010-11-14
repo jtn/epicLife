@@ -1,7 +1,9 @@
 <section id="stats" data-person_id="<%= @person.id %>" class="clearfix">
     <h2><%= @person.name %></h2>
     <img class="avatar" src="<%= @person.avatar_url_or_fallback %>" alt="Martins avatar" />
-    <div id="xp_meter" data-current_xp="<%= @person.xp %>" data-next_level_ratio="<%= @person.next_level_ratio%>"><div>XP: <%= @person.xp %>/<%= @person.xp_for_next %></div></div>
+    <div id="xp_meter" data-current_xp="<%= @person.xp %>" data-next_level_ratio="<%= @person.next_level_ratio%>">
+        <div>XP: <%= @person.xp %>/<%= @person.xp_for_next %></div>
+    </div>
     <p id="extra_life">Extraliv: <%= @person.level_to_string %> </p>
 </section>
 <section id="feats">
@@ -16,7 +18,9 @@
     </header>
     <ol>
         <% @feats.each do |feat| %>
-        <li><a class="feat<%= " completed" if feat.completed? %>" src="#" data-id="<%= feat.id %>" data-completed="<%= feat.completed %>" ><%= feat.activity.title %></a></li>
+            <li style="display:block;">
+            <a class="feat<%= " completed" if feat.completed? %>" src="#" data-id="<%= feat.id %>" data-completed="<%= feat.completed %>" ><%= feat.activity.title %></a><span class="streak" ><%= @person.calculate_streak feat %></span>
+            </li>
         <% end %>
     </ol>
     <p id="new"><%= link_to('Lägg till ny', new_person_feat_path(@person)) %></p>
