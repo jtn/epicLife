@@ -70,8 +70,11 @@ class FeatsController < ApplicationController
     sign = params[:feat][:completed] == '1' ? '+': '-'
 
     respond_to do |format|
-        format.json { render :json => {:xpGained => "#{sign}#{@feat.xp}",
-            :xpTotal => @person.xp}}
+        format.json { render :json => {
+            :xpGained => "#{sign}#{@feat.xp}",
+            :xpTotal => @person.xp,
+            :levelAtXp => @person.level_at_xp,
+            :completed => @feat.completed}}
     end
 
   end

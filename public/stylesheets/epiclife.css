@@ -348,6 +348,18 @@ nav li.next { float: right;}
     position: absolute;
 }
 
+#xp_meter {
+    background-color: white;
+    height: 12px;
+    margin-left: 89px;
+    width: 350px;
+}
+
+#xp_meter div {
+    background-color: green;
+    height: 12px;
+}
+
 
 
 

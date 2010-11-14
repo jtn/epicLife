@@ -7,6 +7,7 @@ class Feat < ActiveRecord::Base
 
   def complete
       self.completed = true
+      self.xp = self.activity.xp
       save
   end
 
