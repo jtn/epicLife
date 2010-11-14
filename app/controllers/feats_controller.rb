@@ -62,19 +62,26 @@ class FeatsController < ApplicationController
   # PUT /feats/1.xml
   def update
     @feat = @person.feats.find(params[:id])
+    level_old = @person.level
+
     if params[:feat][:completed] == '1'
         @feat.complete
     else
         @feat.uncomplete
     end
     sign = params[:feat][:completed] == '1' ? '+': '-'
+    
+    has_leveled = @person.level > level_old
 
     respond_to do |format|
         format.json { render :json => {
             :xpGained => "#{sign}#{@feat.xp}",
             :xpTotal => @person.xp,
-            :levelAtXp => @person.level_at_xp,
+            :next_level_ratio => @person.next_level_ratio,
+            :extra_life => @person.level_to_string,
+            :has_leveled => has_leveled,
             :completed => @feat.completed}}
+    
     end
 
   end

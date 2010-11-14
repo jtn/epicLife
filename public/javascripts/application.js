@@ -12,9 +12,9 @@ $(function() {
                 element.data('completed', data.completed);
                 element.toggleClass('completed');
                 $('#xp_meter').data('current_xp',data.xpTotal)
-                .data('level_at_xp',data.levelAtXp);
-
-                update_xp_meter(1500);
+                .data('next_level_ratio',data.next_level_ratio);
+                $('#extra_life').data('extra_life', data.extra_life);
+                update_xp_meter(1500,data.has_leveled);
                 var gainer = $('<div class="xpGained">' + data.xpGained + '</div>'); 
                 var elementPosition = element.position();
                 gainer.css('top', elementPosition.top);
@@ -31,15 +31,26 @@ $(function() {
         return false;
     });
 
-    function update_xp_meter(duration){    
+    function update_xp_meter(duration, has_leveled){    
         var xpMeter = $('#xp_meter');
-        var xpBar = xpMeter.data('current_xp')/xpMeter.data('level_at_xp')
-            
+        
+        if (has_leveled) {
+            $('#xp_meter div').text('').animate({
+            width: xpMeter.width()
+                                        }, 
+            duration,function(){update_extra_life()});
+            duration = 0;
+        }
         //$('#xp_meter div').text('').css('width', xpBar*xpMeter.width()); 
         $('#xp_meter div').text('').animate({
-            width: xpBar*xpMeter.width()
-                                        }, duration,function(){});  
+                    width: xpMeter.data('next_level_ratio')*xpMeter.width()
+                                        }, 
+                    duration,function(){update_extra_life()});  
 
-    }
-    update_xp_meter(1)
+    };
+    function update_extra_life(){
+        if($('#extra_life').data('extra_life'))
+            $('#extra_life').text('Extraliv: ' + $('#extra_life').data('extra_life'));
+    };
+    update_xp_meter(1,false);
 });// Ready when you are, Sir.

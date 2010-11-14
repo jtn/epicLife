@@ -8,18 +8,27 @@ class Person < ActiveRecord::Base
     feats.completed.sum("xp")
   end
 
-  def levelFunctionXp(level)
-    (1/@@level_constant*level).floor
+  def level_function_xp(xp)
+    (xp/@@level_constant).floor
+  end
+
+  def next_level_ratio
+    xp_for_current_level = self.xp_at_level(self.level)
+    (self.xp-xp_for_current_level)/(self.xp_for_next - xp_for_current_level)
   end
 
   def level
     #((self.xp - 1)/@@level_constant).floor;
-    levelFunctionXp(self.xp)
+    level_function_xp(self.xp)
   end
 
-  def level_at_xp
-      ((level+1)*700)
+  def xp_at_level(level)
+    level*@@level_constant
   end
+  def xp_for_next
+       ((level+1)*700)
+  end
+
 
   def avatar_url_or_fallback
     avatar_url || "/images/Alfred_E_Neumann_128x128.png"
