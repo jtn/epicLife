@@ -80,7 +80,8 @@ class FeatsController < ApplicationController
             :next_level_ratio => @person.next_level_ratio,
             :extra_life => @person.level_to_string,
             :has_leveled => has_leveled,
-            :completed => @feat.completed}}
+            :completed => @feat.completed,
+            :streak => @feat.calculate_streak}}
     
     end
 

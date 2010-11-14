@@ -15,6 +15,7 @@ $(function() {
                 .data('next_level_ratio',data.next_level_ratio);
                 $('#extra_life').data('extra_life', data.extra_life);
                 update_xp_meter(1500,data.has_leveled);
+                element.siblings().first().text(data.streak);
                 var gainer = $('<div class="xp_gained">' + data.xpGained + 'XP</div>'); 
                 //var elementPosition = element.position();
                 element.after(gainer);

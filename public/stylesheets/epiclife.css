@@ -269,6 +269,13 @@ nav {
 nav li.previous { float: left;}
 nav li.next { float: right;}
 
+nav li a,
+nav li a:visited{
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 
 #feats ol { 
     list-style: none;
@@ -354,7 +361,7 @@ nav li.next { float: right;}
     float: right;
     padding-right: 10%;
     color: black;
-    text-shadow: #FF0000 0px 1px 0px;
+    text-shadow: #FF0000 0px 1px 2px;
 }
 
 .xp_gained {

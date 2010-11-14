@@ -19,7 +19,7 @@
     <ol>
         <% @feats.each do |feat| %>
             <li style="display:block;">
-            <a class="feat<%= " completed" if feat.completed? %>" src="#" data-id="<%= feat.id %>" data-completed="<%= feat.completed %>" ><%= feat.activity.title %></a><span class="streak" ><%= @person.calculate_streak feat %></span>
+            <a class="feat<%= " completed" if feat.completed? %>" src="#" data-id="<%= feat.id %>" data-completed="<%= feat.completed %>" ><%= feat.activity.title %></a><span class="streak" ><%= feat.calculate_streak %></span>
             </li>
         <% end %>
     </ol>
