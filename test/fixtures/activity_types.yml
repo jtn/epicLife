@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  weight: 1.5
+  period: 1
+  xp: 1
+
+two:
+  name: MyString
+  weight: 1.5
+  period: 1
+  xp: 1
