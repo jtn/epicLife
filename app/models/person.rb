@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Person < ActiveRecord::Base
   has_many :feats
 
@@ -17,7 +18,7 @@ class Person < ActiveRecord::Base
   end
 
   def level_at_xp
-      (level+1*700)
+      ((level+1)*700)
   end
 
   def avatar_url_or_fallback
@@ -27,7 +28,11 @@ class Person < ActiveRecord::Base
 
   def level_to_string
       month, day = self.level.divmod(30)
-      "#{month} manad, #{day} dagar"
+      spoken_month = 'månad' 
+      spoken_month += 'er' if month != 1 
+      spoken_day = 'dag'
+      spoken_day += 'ar' if day != 1
+      "#{month} #{spoken_month} #{day} #{spoken_day}"
   end
 
   #This function should calculate feats,

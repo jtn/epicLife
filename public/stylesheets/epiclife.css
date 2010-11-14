@@ -352,12 +352,52 @@ nav li.next { float: right;}
     background-color: white;
     height: 12px;
     margin-left: 89px;
-    width: 350px;
+    width: 220px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-image: -webkit-gradient( 
+        linear, 
+        left top, 
+        left bottom, 
+        from(#e2e2e2), 
+        to(#8c8a88), 
+        color-stop(0.5, #acadae), 
+        color-stop(0.5, #82807e)
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        #8c8a88 0%,
+        #82807e 50%,
+        #acadae 50%,
+        #e2e2e2 100%
+    );
+
 }
 
 #xp_meter div {
     background-color: green;
     height: 12px;
+    -webkit-border-radius: 4px 0 0 8px;
+    -moz-border-radius: 4px;
+    border-radius: 4px 0 0 4px; 
+    background-image: -webkit-gradient( 
+        linear, 
+        left top, 
+        left bottom, 
+        from(#3EE23B), 
+        to(#248C24), 
+        color-stop(0.5, #37AE33), 
+        color-stop(0.5, #2A8230)
+    );
+    background-image: -moz-linear-gradient(
+        center top,
+        #e2e2e2 0%,
+        #acadae 50%,
+        #82807e 50%,
+        #8c8a88 100%,
+    );
+
 }
 
 
