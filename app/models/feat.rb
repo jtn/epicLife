@@ -42,8 +42,9 @@ class Feat < ActiveRecord::Base
   def filter_streak_candidates_based_on_period(streak_candidates, period)
     streak_candidates = streak_candidates.order("activities.start_time DESC")
     streak = []
-    start_time = streak_candidates.first.date
+    return streak if streak_candidates.blank?
 
+    start_time = streak_candidates.first.date
     streak_candidates.each do |streak_candidate| 
       if ((start_time - period)..(start_time)).include? streak_candidate.date
         streak << streak_candidate
