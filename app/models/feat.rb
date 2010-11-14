@@ -15,4 +15,8 @@ class Feat < ActiveRecord::Base
       self.completed = false
       save
   end
+  
+  def date
+    activity.start_time.to_date
+  end
 end

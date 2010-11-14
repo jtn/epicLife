@@ -49,4 +49,37 @@ class Person < ActiveRecord::Base
   def evaluate_feat(feat)
   end
 
+  def calculate_streak(feat)
+    streak_candidates = get_streak_candidates(feat)
+    streak = filter_streak_candidates_based_on_period(streak_candidates, feat.activity.activity_type.period)
+    streak.length
+  end
+  
+  private
+  
+  # candidates are: all completed feats of same type as feat.
+  def get_streak_candidates(feat)
+    activity_type = feat.activity.activity_type
+    streak_candidates = feats.completed
+    streak_candidates = streak_candidates.includes(:activity)
+    streak_candidates = streak_candidates.where(["activities.activity_type_id = ?",activity_type.id])
+  end
+  
+  # Check if a candidate is within the streak period. Streak candidates are in descending start_time order.
+  def filter_streak_candidates_based_on_period(streak_candidates, period)
+    streak_candidates = streak_candidates.order("activities.start_time DESC")
+    streak = []
+    start_time = streak_candidates.first.date
+
+    streak_candidates.each do |streak_candidate| 
+      if ((start_time - period)..(start_time)).include? streak_candidate.date
+        streak << streak_candidate
+        start_time = streak_candidate.date
+      else
+        break
+      end
+    end
+    
+    streak
+  end
 end
