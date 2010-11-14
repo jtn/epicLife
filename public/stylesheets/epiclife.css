@@ -285,8 +285,7 @@ nav li a:visited{
 
 
 #new a,
-#feats a.feat, 
-#feats a.feat.completed:hover { 
+#feats a.feat { 
     cursor: pointer;
     display: block;
     margin-left: 6px;
@@ -322,7 +321,6 @@ nav li a:visited{
     );
 }
 
-#feats a.feat:hover, 
 #feats a.feat.completed {
     background-image: -webkit-gradient( 
         linear, 
@@ -340,11 +338,6 @@ nav li a:visited{
         #82807e 50%,
         #8c8a88 100%,
     );
-}
-
-#feats #new a:hover,
-#feats a.feat:hover {
-    opacity: 0.7;
 }
 
 #feats #new {
