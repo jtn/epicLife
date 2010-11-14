@@ -1,4 +1,4 @@
-<section id="stats" class="clearfix">
+<section id="stats" data-person-id="<%= @person.id %>" class="clearfix">
     <h2><%= @person.name %></h2>
     <img class="avatar" src="<%= @person.avatar_url_or_fallback %>" alt="Martins avatar" />
     <div id="xp_meter"><span>XP: <%= @person.xp %>/<%= @person.next_level %></span></div>

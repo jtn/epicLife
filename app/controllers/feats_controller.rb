@@ -62,16 +62,18 @@ class FeatsController < ApplicationController
   # PUT /feats/1.xml
   def update
     @feat = @person.feats.find(params[:id])
+    if params[:feat][:completed] == '1'
+        @feat.complete
+    else
+        @feat.uncomplete
+    end
+    sign = params[:feat][:completed] == '1' ? '+': '-'
 
     respond_to do |format|
-      if @feat.update_attributes(params[:feat])
-        format.html { redirect_to([@person, @feat], :notice => 'Feat was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @feat.errors, :status => :unprocessable_entity }
-      end
+        format.json { render :json => {:xpGained => "#{sign}#{@feat.xp}",
+            :xpTotal => @person.xp}}
     end
+
   end
 
   # DELETE /feats/1
