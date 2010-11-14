@@ -238,15 +238,17 @@ header h1 span { color: #E709FF; }
     background-color: #333;
     color: white;
     border-bottom: 1px solid grey;
-}
-#stats h2 { 
-    display: inline;
     font-size: 18px;
     line-height: 24px;
 }
+#stats h2 { 
+    display: inline;
+    font-size: 24px;
+    line-height: 36px;
+}
 
 #stats img { 
-    height: 75px;
+    height: 128px;
     float:left;
     padding: 3px;
     border: 1px solid grey;
@@ -367,8 +369,8 @@ nav li a:visited{
 
 #xp_meter {
     background-color: white;
-    height: 12px;
-    margin-left: 89px;
+    height: 24px;
+    margin-left: 141px;
     width: 220px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -394,7 +396,7 @@ nav li a:visited{
 
 #xp_meter div {
     background-color: green;
-    height: 12px;
+    height: 24px;
     -webkit-border-radius: 4px 0 0 8px;
     -moz-border-radius: 4px;
     border-radius: 4px 0 0 4px; 
