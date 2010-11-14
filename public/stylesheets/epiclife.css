@@ -277,8 +277,7 @@ nav li.next { float: right;}
 #feats ol li { padding: 0;}
 
 #new a,
-#feats a.feat, 
-#feats a.feat.completed:hover { 
+#feats a.feat { 
     cursor: pointer;
     display: block;
     margin-bottom: 10px;
@@ -313,7 +312,6 @@ nav li.next { float: right;}
     );
 }
 
-#feats a.feat:hover, 
 #feats a.feat.completed {
     background-image: -webkit-gradient( 
         linear, 
@@ -331,11 +329,6 @@ nav li.next { float: right;}
         #82807e 50%,
         #8c8a88 100%,
     );
-}
-
-#feats #new a:hover,
-#feats a.feat:hover {
-    opacity: 0.7;
 }
 
 #feats #new {
