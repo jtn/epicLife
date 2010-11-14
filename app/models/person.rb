@@ -8,6 +8,11 @@ class Person < ActiveRecord::Base
     feats.completed.sum("xp")
   end
 
+  def ranking
+    ranked_list = Person.all.sort{|a,b| b.xp <=> a.xp}
+    ranked_list.index(self) + 1
+  end
+
   def level_function_xp(xp)
     (xp/@@level_constant).floor
   end
@@ -27,7 +32,6 @@ class Person < ActiveRecord::Base
   def xp_for_next
        ((level+1)*@@level_constant)
   end
-
 
   def avatar_url_or_fallback
     avatar_url || "/images/Alfred_E_Neumann_128x128.png"

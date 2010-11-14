@@ -4,6 +4,7 @@
     <div id="xp_meter" data-current_xp="<%= @person.xp %>" data-next_level_ratio="<%= @person.next_level_ratio%>">
         <div>XP: <%= @person.xp %>/<%= @person.xp_for_next %></div>
     </div>
+    <p id="ranking">Ranking: <%= @person.ranking %> av <%= Person.count %></p>
     <p id="extra_life">Extraliv: <%= @person.level_to_string %> </p>
 </section>
 <section id="feats">
